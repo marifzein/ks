@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  .grid > * {
+    min-width: 0;
+  }
+  body {
+    @apply bg-surface font-sans text-ink;
+  }
+  ::selection {
+    background: #e60000;
+    color: #fff;
+  }
+}
+
+@layer components {
+  .container-ik {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-primary;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply h-px w-8 bg-primary;
+  }
+  .section-pad {
+    @apply py-20 md:py-28;
+  }
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 active:scale-[0.98];
+  }
+  .input-ik {
+    @apply w-full rounded-xl border border-ink/10 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink/35 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15;
+  }
+  .label-ik {
+    @apply mb-1.5 block text-xs font-bold uppercase tracking-wider text-ink/60;
+  }
+  .card-ik {
+    @apply rounded-2xl border border-ink/[0.06] bg-white shadow-card;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide;
+  }
+  .stat-number {
+    @apply font-extrabold tracking-tight;
+    font-variant-numeric: tabular-nums;
+  }
+  .prose-ik p {
+    @apply mb-4 leading-relaxed text-ink/75;
+  }
+  .prose-ik strong {
+    @apply text-ink;
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slim scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(17, 17, 17, 0.25) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(17, 17, 17, 0.2);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Leaflet refinements */
+.leaflet-container {
+  font-family: inherit;
+  background: #e8e8e3;
+}
+.leaflet-tooltip.ik-tip {
+  background: #111111;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 12px;
+  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.35);
+}
+.leaflet-tooltip.ik-tip::before {
+  border-top-color: #111111;
+}
+.leaflet-control-attribution {
+  font-size: 9px;
+  opacity: 0.6;
+}
+
+/* Recharts tweaks */
+.recharts-default-tooltip {
+  border-radius: 12px !important;
+  border: 1px solid rgba(17, 17, 17, 0.08) !important;
+  box-shadow: 0 12px 32px rgba(17, 17, 17, 0.12) !important;
+  font-family: inherit !important;
+}
+
+/* Grain / texture helpers */
+.bg-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Marquee */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-track {
+  animation: ticker 46s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
