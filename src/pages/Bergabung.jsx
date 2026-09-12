@@ -1,59 +1,59 @@
-import { useState } from 'react'
-import { ArrowRight, CheckCircle2, ChevronDown, FileText, MapPin, ShieldCheck, UserRound } from 'lucide-react'
-import Button from '../components/Button'
-import SectionHeader from '../components/SectionHeader'
-import ScrollReveal from '../components/ScrollReveal'
+import { useState } from "react";
+import { ArrowRight, CheckCircle2, ChevronDown, FileText, MapPin, ShieldCheck, UserRound } from "lucide-react";
+import Button from "../components/Button";
+import SectionHeader from "../components/SectionHeader";
+import ScrollReveal from "../components/ScrollReveal";
 
 const steps = [
   {
     icon: UserRound,
-    title: 'Isi Data Diri',
-    desc: 'Lengkapi formulir registrasi online: data diri, alamat, dan wilayah tempat tinggal.',
+    title: "Isi Data Diri",
+    desc: "Lengkapi formulir registrasi online: data diri, alamat, dan wilayah tempat tinggal.",
   },
   {
     icon: MapPin,
-    title: 'Pilih Wilayah',
-    desc: 'Tentukan pengurus daerah, cabang, dan ranting terdekat sesuai domisili.',
+    title: "Pilih Wilayah",
+    desc: "Tentukan pengurus daerah, cabang, dan ranting terdekat sesuai domisili.",
   },
   {
     icon: FileText,
-    title: 'Unggah Dokumen',
-    desc: 'Siapkan dokumen pendukung: identitas, pas foto, dan surat pernyataan (sesuai ketentuan).',
+    title: "Unggah Dokumen",
+    desc: "Siapkan dokumen pendukung: identitas, pas foto, dan surat pernyataan (sesuai ketentuan).",
   },
   {
     icon: ShieldCheck,
-    title: 'Verifikasi & Aktivasi',
-    desc: 'Pengurus cabang memverifikasi data. Setelah disetujui, kamu resmi menjadi anggota.',
+    title: "Verifikasi & Aktivasi",
+    desc: "Pengurus cabang memverifikasi data. Setelah disetujui, kamu resmi menjadi anggota.",
   },
-]
+];
 
 const faqs = [
   {
-    q: 'Apakah ada batasan usia untuk bergabung?',
-    a: 'Ketentuan usia mengikuti aturan resmi organisasi yang akan diinformasikan pengurus cabang. [DATA SIMULASI]',
+    q: "Apakah ada batasan usia untuk bergabung?",
+    a: "Ketentuan usia mengikuti aturan resmi organisasi yang akan diinformasikan pengurus cabang. ",
   },
   {
-    q: 'Di mana saya bisa berlatih?',
-    a: 'Latihan diselenggarakan di ranting dan cabang di seluruh Indonesia. Pilih wilayah terdekat saat registrasi.',
+    q: "Di mana saya bisa berlatih?",
+    a: "Latihan diselenggarakan di ranting dan cabang di seluruh Indonesia. Pilih wilayah terdekat saat registrasi.",
   },
   {
-    q: 'Apakah saya harus punya pengalaman bela diri?',
-    a: 'Tidak. Pembinaan dimulai dari dasar dan disesuaikan dengan kemampuan setiap anggota.',
+    q: "Apakah saya harus punya pengalaman bela diri?",
+    a: "Tidak. Pembinaan dimulai dari dasar dan disesuaikan dengan kemampuan setiap anggota.",
   },
   {
-    q: 'Berapa biaya untuk bergabung?',
-    a: 'Biaya mengikuti ketentuan resmi cabang masing-masing. [DATA SIMULASI]',
+    q: "Berapa biaya untuk bergabung?",
+    a: "Biaya mengikuti ketentuan resmi cabang masing-masing. ",
   },
-]
+];
 
 export default function Bergabung() {
-  const [openFaq, setOpenFaq] = useState(0)
+  const [openFaq, setOpenFaq] = useState(0);
 
   return (
     <div>
       <section className="relative overflow-hidden bg-ink pb-24 pt-40">
         <div className="absolute inset-0">
-          <img src="/images/silat-betawi.jpg" alt="Bergabung IKSPI" className="h-full w-full object-cover opacity-25" />
+          <img src="images/silat-betawi.jpg" alt="Bergabung IKSPI" className="h-full w-full object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" />
         </div>
         <div className="container-ik relative">
@@ -111,10 +111,10 @@ export default function Bergabung() {
             <ScrollReveal delay={150}>
               <ul className="mt-8 flex flex-col gap-4">
                 {[
-                  'Fotokopi identitas diri (KTP/KK bagi dewasa, akta kelahiran bagi anak)',
-                  'Pas foto terbaru berlatar polos',
-                  'Surat pernyataan orang tua/wali bagi calon anggota di bawah umur',
-                  'Menentukan wilayah cabang/ranting terdekat dengan domisili',
+                  "Fotokopi identitas diri (KTP/KK bagi dewasa, akta kelahiran bagi anak)",
+                  "Pas foto terbaru berlatar polos",
+                  "Surat pernyataan orang tua/wali bagi calon anggota di bawah umur",
+                  "Menentukan wilayah cabang/ranting terdekat dengan domisili",
                 ].map((r) => (
                   <li key={r} className="flex items-start gap-3 text-sm font-medium leading-relaxed text-ink/70">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" /> {r}
@@ -130,10 +130,10 @@ export default function Bergabung() {
                 <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-gold">Yang kamu dapatkan</p>
                 <div className="mt-6 flex flex-col gap-5">
                   {[
-                    'Nomor anggota resmi organisasi',
-                    'Kartu anggota digital dengan QR verifikasi',
-                    'Akses ke direktori dan komunitas anggota',
-                    'Program pembinaan dan kenaikan tingkat',
+                    "Nomor anggota resmi organisasi",
+                    "Kartu anggota digital dengan QR verifikasi",
+                    "Akses ke direktori dan komunitas anggota",
+                    "Program pembinaan dan kenaikan tingkat",
                   ].map((b) => (
                     <div key={b} className="flex items-center gap-3 rounded-2xl bg-white/[0.07] p-4">
                       <CheckCircle2 className="h-5 w-5 shrink-0 text-gold" />
@@ -156,11 +156,13 @@ export default function Bergabung() {
               <ScrollReveal key={f.q} delay={i * 60}>
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? -1 : i)}
-                  className={`card-ik w-full p-6 text-left transition ${openFaq === i ? 'shadow-lift' : ''}`}
+                  className={`card-ik w-full p-6 text-left transition ${openFaq === i ? "shadow-lift" : ""}`}
                 >
                   <div className="flex items-center justify-between gap-4">
                     <p className="font-extrabold text-ink">{f.q}</p>
-                    <ChevronDown className={`h-5 w-5 shrink-0 text-primary transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      className={`h-5 w-5 shrink-0 text-primary transition-transform ${openFaq === i ? "rotate-180" : ""}`}
+                    />
                   </div>
                   {openFaq === i && <p className="mt-3 text-sm leading-relaxed text-ink/60">{f.a}</p>}
                 </button>
@@ -182,5 +184,5 @@ export default function Bergabung() {
         </div>
       </section>
     </div>
-  )
+  );
 }

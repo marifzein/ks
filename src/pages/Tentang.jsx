@@ -1,11 +1,11 @@
-import { ArrowRight, HeartHandshake, BookOpen, Users2, Sparkles } from 'lucide-react'
-import Button from '../components/Button'
-import SectionHeader from '../components/SectionHeader'
-import ScrollReveal from '../components/ScrollReveal'
-import MemberAvatar from '../components/MemberAvatar'
-import Badge from '../components/Badge'
-import { figures, orgStats } from '../data'
-import { fmtCompact } from '../lib/utils'
+import { ArrowRight, HeartHandshake, BookOpen, Users2, Sparkles } from "lucide-react";
+import Button from "../components/Button";
+import SectionHeader from "../components/SectionHeader";
+import ScrollReveal from "../components/ScrollReveal";
+import MemberAvatar from "../components/MemberAvatar";
+import Badge from "../components/Badge";
+import { figures, orgStats } from "../data";
+import { fmtCompact } from "../lib/utils";
 
 export default function Tentang() {
   return (
@@ -13,7 +13,7 @@ export default function Tentang() {
       {/* Page hero */}
       <section className="relative overflow-hidden bg-ink pb-24 pt-40">
         <div className="absolute inset-0">
-          <img src="/images/silat-nusantara.jpg" alt="IKSPI" className="h-full w-full object-cover opacity-30" />
+          <img src="images/silat-nusantara.jpg" alt="IKSPI" className="h-full w-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" />
         </div>
         <div className="container-ik relative">
@@ -37,7 +37,7 @@ export default function Tentang() {
             <SectionHeader
               eyebrow="Perjalanan"
               title="Dari Sebuah Tekad, Tumbuh Sebuah Keluarga"
-              description="Sejarah panjang organisasi dibangun dari semangat melestarikan budaya, membina generasi, dan menjaga nilai persaudaraan. [DATA SIMULASI]"
+              description="Sejarah panjang organisasi dibangun dari semangat melestarikan budaya, membina generasi, dan menjaga nilai persaudaraan. "
             />
             <ScrollReveal delay={150}>
               <div className="prose-ik mt-6 text-[15px]">
@@ -55,21 +55,29 @@ export default function Tentang() {
             </ScrollReveal>
             <ScrollReveal delay={250}>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Button to="/sejarah">Lihat Perjalanan Sejarah <ArrowRight className="h-4 w-4" /></Button>
-                <Button to="/nilai" variant="dark">Nilai & Filosofi</Button>
+                <Button to="/sejarah">
+                  Lihat Perjalanan Sejarah <ArrowRight className="h-4 w-4" />
+                </Button>
+                <Button to="/nilai" variant="dark">
+                  Nilai & Filosofi
+                </Button>
               </div>
             </ScrollReveal>
           </div>
           <ScrollReveal delay={200}>
             <div className="grid gap-4">
               <div className="overflow-hidden rounded-3xl shadow-lift">
-                <img src="/images/hero-anggota.png" alt="Anggota IKSPI" className="aspect-[16/10] w-full object-cover" />
+                <img
+                  src="images/pengurus-pusat-ikspi.webp"
+                  alt="Anggota IKSPI"
+                  className="aspect-[16/10] w-full object-cover"
+                />
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {[
-                  [fmtCompact(orgStats.members), 'Anggota'],
-                  [orgStats.provinces, 'Provinsi'],
-                  [orgStats.branches, 'Cabang'],
+                  [fmtCompact(orgStats.members), "Anggota"],
+                  [orgStats.provinces, "Provinsi"],
+                  [orgStats.branches, "Cabang"],
                 ].map(([v, l]) => (
                   <div key={l} className="rounded-2xl bg-ink p-4 text-center text-white">
                     <p className="stat-number text-xl font-extrabold text-gold">{v}</p>
@@ -85,17 +93,17 @@ export default function Tentang() {
       {/* Pillars */}
       <section className="section-pad bg-white">
         <div className="container-ik">
-          <SectionHeader
-            eyebrow="Pilar Organisasi"
-            title="Apa yang Menopang IKSPI?"
-            align="center"
-          />
+          <SectionHeader eyebrow="Pilar Organisasi" title="Apa yang Menopang IKSPI?" align="center" />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
-              [HeartHandshake, 'Persaudaraan', 'Keluarga besar yang saling menjaga — satu persaudaraan di atas segalanya.'],
-              [BookOpen, 'Ilmu & Budaya', 'Melestarikan ilmu bela diri dan seni budaya warisan Nusantara.'],
-              [Users2, 'Pembinaan', 'Kaderisasi generasi muda yang berkarakter, terampil, dan bertanggung jawab.'],
-              [Sparkles, 'Pengabdian', 'Bakti kepada masyarakat melalui kegiatan sosial dan kemanusiaan.'],
+              [
+                HeartHandshake,
+                "Persaudaraan",
+                "Keluarga besar yang saling menjaga — satu persaudaraan di atas segalanya.",
+              ],
+              [BookOpen, "Ilmu & Budaya", "Melestarikan ilmu bela diri dan seni budaya warisan Nusantara."],
+              [Users2, "Pembinaan", "Kaderisasi generasi muda yang berkarakter, terampil, dan bertanggung jawab."],
+              [Sparkles, "Pengabdian", "Bakti kepada masyarakat melalui kegiatan sosial dan kemanusiaan."],
             ].map(([Icon, t, d], i) => (
               <ScrollReveal key={t} delay={i * 90}>
                 <div className="card-ik h-full p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
@@ -159,10 +167,12 @@ export default function Tentang() {
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
             <Button to="/sejarah">Jelajahi Sejarah</Button>
-            <Button to="/nilai" variant="outlineLight">Nilai & Filosofi</Button>
+            <Button to="/nilai" variant="outlineLight">
+              Nilai & Filosofi
+            </Button>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }

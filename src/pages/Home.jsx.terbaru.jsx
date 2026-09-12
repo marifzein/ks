@@ -43,7 +43,7 @@ export default function Home() {
       <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-black pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero-anggota.png"
+            src="images/hero-anggota.png"
             alt="Anggota IKSPI Kera Sakti"
             className="h-full w-full object-cover object-[center_20%] opacity-40 grayscale contrast-125"
           />
@@ -56,7 +56,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2.5 rounded-none border-l-2 border-red-600 bg-white/5 px-3.5 py-1.5 backdrop-blur-md">
               <span className="h-2 w-2 rounded-full bg-red-600 animate-ping" />
               <span className="text-[11px] font-black uppercase tracking-[0.25em] text-gray-300">
-                Organisasi Pencak Silat · [DATA SIMULASI]
+                Organisasi Pencak Silat ·
               </span>
             </div>
           </ScrollReveal>
@@ -136,7 +136,7 @@ export default function Home() {
           <ScrollReveal>
             <div className="relative border border-white/10 bg-black p-2">
               <img
-                src="/images/aktivitas-latihan.jpg"
+                src="images/aktivitas-latihan.jpg"
                 alt="Latihan IKSPI"
                 className="aspect-[4/3] w-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition duration-500"
               />

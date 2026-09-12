@@ -1,33 +1,33 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowRight, CalendarDays, Search } from 'lucide-react'
-import SectionHeader from '../components/SectionHeader'
-import ScrollReveal from '../components/ScrollReveal'
-import NewsCard from '../components/NewsCard'
-import Badge from '../components/Badge'
-import { news, agenda } from '../data'
-import { fmtDate } from '../lib/utils'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, CalendarDays, Search } from "lucide-react";
+import SectionHeader from "../components/SectionHeader";
+import ScrollReveal from "../components/ScrollReveal";
+import NewsCard from "../components/NewsCard";
+import Badge from "../components/Badge";
+import { news, agenda } from "../data";
+import { fmtDate } from "../lib/utils";
 
-const cats = ['Semua', 'Berita', 'Pengumuman', 'Kegiatan', 'Organisasi', 'Prestasi']
+const cats = ["Semua", "Berita", "Pengumuman", "Kegiatan", "Organisasi", "Prestasi"];
 
 export default function Berita() {
-  const [cat, setCat] = useState('Semua')
-  const [q, setQ] = useState('')
+  const [cat, setCat] = useState("Semua");
+  const [q, setQ] = useState("");
 
   const filtered = news.filter((n) => {
-    const okCat = cat === 'Semua' || n.category === cat
-    const okQ = !q || (n.title + n.excerpt).toLowerCase().includes(q.toLowerCase())
-    return okCat && okQ
-  })
+    const okCat = cat === "Semua" || n.category === cat;
+    const okQ = !q || (n.title + n.excerpt).toLowerCase().includes(q.toLowerCase());
+    return okCat && okQ;
+  });
 
-  const featured = news.find((n) => n.featured)
-  const rest = filtered.filter((n) => n.id !== featured?.id)
+  const featured = news.find((n) => n.featured);
+  const rest = filtered.filter((n) => n.id !== featured?.id);
 
   return (
     <div>
       <section className="relative overflow-hidden bg-ink pb-24 pt-40">
         <div className="absolute inset-0">
-          <img src="/images/hero-anggota.png" alt="Berita IKSPI" className="h-full w-full object-cover opacity-25" />
+          <img src="images/hero-anggota.png" alt="Berita IKSPI" className="h-full w-full object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" />
         </div>
         <div className="container-ik relative">
@@ -62,7 +62,9 @@ export default function Berita() {
                   key={c}
                   onClick={() => setCat(c)}
                   className={`rounded-full px-5 py-2.5 text-sm font-bold transition-all ${
-                    cat === c ? 'bg-ink text-white shadow' : 'bg-white text-ink/55 hover:text-ink border border-ink/[0.08]'
+                    cat === c
+                      ? "bg-ink text-white shadow"
+                      : "bg-white text-ink/55 hover:text-ink border border-ink/[0.08]"
                   }`}
                 >
                   {c}
@@ -70,7 +72,7 @@ export default function Berita() {
               ))}
             </div>
 
-            {featured && (cat === 'Semua' || featured.category === cat) && (
+            {featured && (cat === "Semua" || featured.category === cat) && (
               <ScrollReveal delay={80}>
                 <div className="mt-8">
                   <NewsCard item={featured} featured className="h-full" />
@@ -104,14 +106,18 @@ export default function Berita() {
                   {agenda.map((a) => (
                     <div key={a.title} className="flex gap-4 border-b border-ink/[0.06] pb-4 last:border-0 last:pb-0">
                       <div className="flex w-12 shrink-0 flex-col items-center rounded-xl bg-ink py-2 text-white">
-                        <span className="text-lg font-extrabold leading-none">{new Date(a.date + 'T00:00:00').getDate()}</span>
+                        <span className="text-lg font-extrabold leading-none">
+                          {new Date(a.date + "T00:00:00").getDate()}
+                        </span>
                         <span className="mt-0.5 text-[9px] font-bold uppercase tracking-wider text-white/60">
-                          {new Date(a.date + 'T00:00:00').toLocaleDateString('id-ID', { month: 'short' })}
+                          {new Date(a.date + "T00:00:00").toLocaleDateString("id-ID", { month: "short" })}
                         </span>
                       </div>
                       <div>
                         <p className="text-sm font-extrabold leading-snug text-ink">{a.title}</p>
-                        <Badge tone="gray" className="mt-1.5">{a.type}</Badge>
+                        <Badge tone="gray" className="mt-1.5">
+                          {a.type}
+                        </Badge>
                       </div>
                     </div>
                   ))}
@@ -120,7 +126,8 @@ export default function Berita() {
                   Lihat Semua Kegiatan <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                 </Link>
                 <p className="mt-4 text-[10px] font-semibold text-ink/35">
-                  Tanggal ditampilkan: {fmtDate(agenda[0].date)} — {fmtDate(agenda[agenda.length - 1].date)} · Data simulasi
+                  Tanggal ditampilkan: {fmtDate(agenda[0].date)} — {fmtDate(agenda[agenda.length - 1].date)} · Data
+                  simulasi
                 </p>
               </div>
             </ScrollReveal>
@@ -128,5 +135,5 @@ export default function Berita() {
         </div>
       </section>
     </div>
-  )
+  );
 }

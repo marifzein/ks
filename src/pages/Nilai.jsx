@@ -1,17 +1,24 @@
-import { ArrowRight, Handshake, ShieldCheck, Flame, Sprout, Scale, Compass, Quote } from 'lucide-react'
-import Button from '../components/Button'
-import SectionHeader from '../components/SectionHeader'
-import ScrollReveal from '../components/ScrollReveal'
-import { values } from '../data'
+import { ArrowRight, Handshake, ShieldCheck, Flame, Sprout, Scale, Compass, Quote } from "lucide-react";
+import Button from "../components/Button";
+import SectionHeader from "../components/SectionHeader";
+import ScrollReveal from "../components/ScrollReveal";
+import { values } from "../data";
 
-const valueIcons = { handshake: Handshake, shield: ShieldCheck, flame: Flame, sprout: Sprout, scale: Scale, compass: Compass }
+const valueIcons = {
+  handshake: Handshake,
+  shield: ShieldCheck,
+  flame: Flame,
+  sprout: Sprout,
+  scale: Scale,
+  compass: Compass,
+};
 
 export default function Nilai() {
   return (
     <div>
       <section className="relative overflow-hidden bg-ink pb-24 pt-40">
         <div className="absolute inset-0">
-          <img src="/images/silat-jabar.jpg" alt="Nilai IKSPI" className="h-full w-full object-cover opacity-25" />
+          <img src="images/silat-jabar.jpg" alt="Nilai IKSPI" className="h-full w-full object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" />
         </div>
         <div className="container-ik relative">
@@ -43,11 +50,11 @@ export default function Nilai() {
         <div className="container-ik">
           <div className="flex flex-col gap-16">
             {values.map((v, i) => {
-              const Icon = valueIcons[v.icon] || Compass
-              const even = i % 2 === 0
+              const Icon = valueIcons[v.icon] || Compass;
+              const even = i % 2 === 0;
               return (
-                <div key={v.title} className={`grid items-center gap-10 lg:grid-cols-2 ${even ? '' : ''}`}>
-                  <ScrollReveal className={even ? 'lg:order-1' : 'lg:order-2'}>
+                <div key={v.title} className={`grid items-center gap-10 lg:grid-cols-2 ${even ? "" : ""}`}>
+                  <ScrollReveal className={even ? "lg:order-1" : "lg:order-2"}>
                     <div className="relative overflow-hidden rounded-3xl bg-ink shadow-lift">
                       <div className="bg-grid absolute inset-0" />
                       <div className="relative flex aspect-[4/3] flex-col items-center justify-center gap-5 p-10 text-center">
@@ -62,8 +69,8 @@ export default function Nilai() {
                       </span>
                     </div>
                   </ScrollReveal>
-                  <ScrollReveal delay={150} className={even ? 'lg:order-2' : 'lg:order-1'}>
-                    <div className={even ? 'lg:pl-10' : 'lg:pr-10'}>
+                  <ScrollReveal delay={150} className={even ? "lg:order-2" : "lg:order-1"}>
+                    <div className={even ? "lg:pl-10" : "lg:pr-10"}>
                       <p className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-primary">
                         Nilai 0{i + 1}
                       </p>
@@ -76,7 +83,7 @@ export default function Nilai() {
                     </div>
                   </ScrollReveal>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
@@ -94,5 +101,5 @@ export default function Nilai() {
         </div>
       </section>
     </div>
-  )
+  );
 }

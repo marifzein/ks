@@ -43,13 +43,13 @@ export default function Home() {
       <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-black pt-20">
         <div className="absolute inset-0 z-0">
           {/* <img
-            src="/images/hero-anggota.png"
+            src="images/hero-anggota.png"
             alt="Anggota IKSPI Kera Sakti"
             className="h-full w-full object-cover object-[center_20%] opacity-40 grayscale contrast-125"
           /> */}
 
           <img
-            src="/images/hero.webp"
+            src="images/hero.webp"
             alt="Anggota IKSPI Kera Sakti"
             className="relative left-10 md:left-24 h-full w-full object-cover object-[center_25%] scale-[0.6] origin-right opacity-90 grayscale"
             // className="relative left-10 md:left-24 h-full w-full object-[center_5%] scale-60  object-cover opacity-90"
@@ -148,7 +148,7 @@ export default function Home() {
           <ScrollReveal>
             <div className="relative border border-white/10 bg-black p-2">
               <img
-                src="/images/aktivitas-latihan.jpg"
+                src="images/aktivitas-latihan.jpg"
                 alt="Latihan IKSPI"
                 className="aspect-[4/3] w-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition duration-500"
               />

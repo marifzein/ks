@@ -1,17 +1,17 @@
-import { ArrowRight } from 'lucide-react'
-import Button from '../components/Button'
-import SectionHeader from '../components/SectionHeader'
-import ScrollReveal from '../components/ScrollReveal'
-import Timeline from '../components/Timeline'
-import Badge from '../components/Badge'
-import { historicalTimeline } from '../data'
+import { ArrowRight } from "lucide-react";
+import Button from "../components/Button";
+import SectionHeader from "../components/SectionHeader";
+import ScrollReveal from "../components/ScrollReveal";
+import Timeline from "../components/Timeline";
+import Badge from "../components/Badge";
+import { historicalTimeline } from "../data";
 
 export default function Sejarah() {
   return (
     <div>
       <section className="relative overflow-hidden bg-ink pb-24 pt-40">
         <div className="absolute inset-0">
-          <img src="/images/silat-air.jpg" alt="Sejarah IKSPI" className="h-full w-full object-cover opacity-25" />
+          <img src="images/silat-air.jpg" alt="Sejarah IKSPI" className="h-full w-full object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" />
         </div>
         <div className="container-ik relative">
@@ -53,8 +53,8 @@ export default function Sejarah() {
                 Sejarah belum selesai ditulis.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/60">
-                Setiap anggota yang bergabung hari ini adalah bagian dari babak berikutnya. Data resmi sejarah organisasi
-                akan dihadirkan setelah dikonfirmasi pengurus pusat.
+                Setiap anggota yang bergabung hari ini adalah bagian dari babak berikutnya. Data resmi sejarah
+                organisasi akan dihadirkan setelah dikonfirmasi pengurus pusat.
               </p>
               <div className="mt-8 flex justify-center">
                 <Button to="/bergabung" variant="gold" className="text-ink">
@@ -66,5 +66,5 @@ export default function Sejarah() {
         </div>
       </section>
     </div>
-  )
+  );
 }

@@ -43,14 +43,14 @@ export default function Home() {
       <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink">
         <div className="absolute inset-0">
           <img
-            src="/images/hero.webp"
+            src="images/hero.webp"
             alt="Anggota IKSPI Kera Sakti"
             className="relative left-10 md:left-24 h-full w-full object-cover object-[center_25%] scale-[0.7] origin-right opacity-90 grayscale"
             // className="relative left-10 md:left-24 h-full w-full object-[center_5%] scale-60  object-cover opacity-90"
           />
           {/* <img
-            // src="/images/hero-anggota.png"
-            src="/images/hero.webp"
+            // src="images/hero-anggota.png"
+            src="images/hero.webp"
             alt="Anggota IKSPI Kera Sakti"
             className="h-full w-full object-cover object-[70%_20%] opacity-70"
           /> */}
@@ -139,7 +139,7 @@ export default function Home() {
             <div className="relative">
               <div className="overflow-hidden rounded-3xl shadow-lift">
                 <img
-                  src="/images/aktivitas-latihan.jpg"
+                  src="images/aktivitas-latihan.jpg"
                   alt="Latihan IKSPI"
                   className="aspect-[4/3] w-full object-cover"
                 />

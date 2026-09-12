@@ -1,22 +1,22 @@
-import { useState } from 'react'
-import { ArrowRight, Building2, ChevronDown, ChevronRight, Landmark, Network, Users } from 'lucide-react'
-import Button from '../components/Button'
-import SectionHeader from '../components/SectionHeader'
-import ScrollReveal from '../components/ScrollReveal'
-import IndonesiaMap from '../components/IndonesiaMap'
-import Badge from '../components/Badge'
-import { provinces, orgStats, organizationTree } from '../data'
-import { fmt } from '../lib/utils'
+import { useState } from "react";
+import { ArrowRight, Building2, ChevronDown, ChevronRight, Landmark, Network, Users } from "lucide-react";
+import Button from "../components/Button";
+import SectionHeader from "../components/SectionHeader";
+import ScrollReveal from "../components/ScrollReveal";
+import IndonesiaMap from "../components/IndonesiaMap";
+import Badge from "../components/Badge";
+import { provinces, orgStats, organizationTree } from "../data";
+import { fmt } from "../lib/utils";
 
 function TreeNode({ node, depth = 0 }) {
-  const [open, setOpen] = useState(depth < 1)
-  const hasChildren = node.children?.length > 0
+  const [open, setOpen] = useState(depth < 1);
+  const hasChildren = node.children?.length > 0;
   const typeColor = {
-    Pusat: 'bg-primary text-white',
-    Pengda: 'bg-ink text-white',
-    Cabang: 'bg-blue-500 text-white',
-    Ranting: 'bg-white text-ink border border-ink/10',
-  }[node.type]
+    Pusat: "bg-primary text-white",
+    Pengda: "bg-ink text-white",
+    Cabang: "bg-blue-500 text-white",
+    Ranting: "bg-white text-ink border border-ink/10",
+  }[node.type];
 
   return (
     <div>
@@ -33,24 +33,30 @@ function TreeNode({ node, depth = 0 }) {
         )}
         <span className={`chip ${typeColor}`}>{node.type}</span>
         <span className="text-sm font-extrabold text-ink">{node.name}</span>
-        {node.detail && <span className="ml-auto hidden text-[11px] font-semibold text-ink/40 sm:block">{node.detail}</span>}
+        {node.detail && (
+          <span className="ml-auto hidden text-[11px] font-semibold text-ink/40 sm:block">{node.detail}</span>
+        )}
       </div>
       {open && hasChildren && node.children.map((c) => <TreeNode key={c.name} node={c} depth={depth + 1} />)}
     </div>
-  )
+  );
 }
 
 export default function Sebaran() {
-  const [selected, setSelected] = useState(null)
-  const province = selected ? provinces.find((p) => p.name === selected) : null
-  const topProvinces = [...provinces].sort((a, b) => b.members - a.members).slice(0, 8)
-  const maxMembers = topProvinces[0].members
+  const [selected, setSelected] = useState(null);
+  const province = selected ? provinces.find((p) => p.name === selected) : null;
+  const topProvinces = [...provinces].sort((a, b) => b.members - a.members).slice(0, 8);
+  const maxMembers = topProvinces[0].members;
 
   return (
     <div>
       <section className="relative overflow-hidden bg-ink pb-24 pt-40">
         <div className="absolute inset-0">
-          <img src="/images/silat-indonesia-2.jpg" alt="Sebaran IKSPI" className="h-full w-full object-cover opacity-25" />
+          <img
+            src="images/silat-indonesia-2.jpg"
+            alt="Sebaran IKSPI"
+            className="h-full w-full object-cover opacity-25"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" />
         </div>
         <div className="container-ik relative">
@@ -71,10 +77,10 @@ export default function Sebaran() {
       <section className="border-b border-ink/[0.06] bg-white py-10">
         <div className="container-ik grid grid-cols-2 gap-6 md:grid-cols-4">
           {[
-            [Users, orgStats.members, 'Anggota'],
-            [Landmark, orgStats.provinces, 'Provinsi'],
-            [Building2, orgStats.branches, 'Cabang'],
-            [Network, orgStats.rantings, 'Ranting'],
+            [Users, orgStats.members, "Anggota"],
+            [Landmark, orgStats.provinces, "Provinsi"],
+            [Building2, orgStats.branches, "Cabang"],
+            [Network, orgStats.rantings, "Ranting"],
           ].map(([Icon, v, l]) => (
             <div key={l} className="flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
@@ -110,9 +116,9 @@ export default function Sebaran() {
                     <p className="text-sm font-semibold text-ink/45">Ibu kota: {province.capital}</p>
                     <div className="mt-6 flex flex-col gap-3">
                       {[
-                        ['Anggota', fmt(province.members)],
-                        ['Cabang', province.branches],
-                        ['Ranting', province.rantings],
+                        ["Anggota", fmt(province.members)],
+                        ["Cabang", province.branches],
+                        ["Ranting", province.rantings],
                       ].map(([l, v]) => (
                         <div key={l} className="flex items-center justify-between rounded-2xl bg-surface px-5 py-4">
                           <span className="text-xs font-bold uppercase tracking-wider text-ink/50">{l}</span>
@@ -147,12 +153,18 @@ export default function Sebaran() {
       {/* Top provinces */}
       <section className="section-pad bg-white">
         <div className="container-ik">
-          <SectionHeader eyebrow="Perbandingan" title="Provinsi dengan Anggota Terbanyak" description="Data simulasi untuk memvisualisasikan skala organisasi." />
+          <SectionHeader
+            eyebrow="Perbandingan"
+            title="Provinsi dengan Anggota Terbanyak"
+            description="Data simulasi untuk memvisualisasikan skala organisasi."
+          />
           <div className="mt-10 grid gap-x-12 gap-y-6 md:grid-cols-2">
             {topProvinces.map((p, i) => (
               <ScrollReveal key={p.name} delay={i * 60}>
                 <div className="group flex items-center gap-4">
-                  <span className="w-7 text-right text-lg font-extrabold text-ink/25">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="w-7 text-right text-lg font-extrabold text-ink/25">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <div className="flex-1">
                     <div className="flex items-baseline justify-between">
                       <p className="text-sm font-extrabold text-ink">{p.name}</p>
@@ -185,14 +197,18 @@ export default function Sebaran() {
             <div className="mt-10 rounded-3xl bg-white/95 p-6 shadow-2xl backdrop-blur sm:p-8">
               <div className="flex flex-wrap gap-2 border-b border-ink/[0.06] pb-5">
                 {[
-                  ['Pusat', 'bg-primary text-white'],
-                  ['Pengda', 'bg-ink text-white'],
-                  ['Cabang', 'bg-blue-500 text-white'],
-                  ['Ranting', 'bg-white text-ink border border-ink/10'],
+                  ["Pusat", "bg-primary text-white"],
+                  ["Pengda", "bg-ink text-white"],
+                  ["Cabang", "bg-blue-500 text-white"],
+                  ["Ranting", "bg-white text-ink border border-ink/10"],
                 ].map(([l, c]) => (
-                  <span key={l} className={`chip ${c}`}>{l}</span>
+                  <span key={l} className={`chip ${c}`}>
+                    {l}
+                  </span>
                 ))}
-                <Badge tone="gold" className="ml-auto">DATA SIMULASI</Badge>
+                <Badge tone="gold" className="ml-auto">
+                  DATA SIMULASI
+                </Badge>
               </div>
               <div className="pt-5">
                 <TreeNode node={organizationTree} />
@@ -209,5 +225,5 @@ export default function Sebaran() {
         </div>
       </section>
     </div>
-  )
+  );
 }

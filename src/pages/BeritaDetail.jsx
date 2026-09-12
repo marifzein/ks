@@ -1,14 +1,14 @@
-import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft, CalendarDays, UserRound } from 'lucide-react'
-import Badge from '../components/Badge'
-import NewsCard from '../components/NewsCard'
-import { news } from '../data'
-import { fmtDate } from '../lib/utils'
+import { Link, useParams } from "react-router-dom";
+import { ArrowLeft, CalendarDays, UserRound } from "lucide-react";
+import Badge from "../components/Badge";
+import NewsCard from "../components/NewsCard";
+import { news } from "../data";
+import { fmtDate } from "../lib/utils";
 
 export default function BeritaDetail() {
-  const { id } = useParams()
-  const item = news.find((n) => n.id === id) || news[0]
-  const related = news.filter((n) => n.id !== item.id).slice(0, 3)
+  const { id } = useParams();
+  const item = news.find((n) => n.id === id) || news[0];
+  const related = news.filter((n) => n.id !== item.id).slice(0, 3);
 
   return (
     <div>
@@ -18,7 +18,10 @@ export default function BeritaDetail() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" />
         </div>
         <div className="container-ik relative">
-          <Link to="/berita" className="flex items-center gap-2 text-sm font-bold text-white/60 transition hover:text-white">
+          <Link
+            to="/berita"
+            className="flex items-center gap-2 text-sm font-bold text-white/60 transition hover:text-white"
+          >
             <ArrowLeft className="h-4 w-4" /> Kembali ke Information Center
           </Link>
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -55,7 +58,7 @@ export default function BeritaDetail() {
             </p>
           </article>
           <div className="mt-10 rounded-2xl bg-gold/15 p-5 text-sm font-semibold text-[#7a6300]">
-            ⚠ [DATA SIMULASI] — Konten halaman ini dibuat untuk keperluan prototype dan akan digantikan data resmi.
+            ⚠ — Konten halaman ini dibuat untuk keperluan prototype dan akan digantikan data resmi.
           </div>
         </div>
       </section>
@@ -71,5 +74,5 @@ export default function BeritaDetail() {
         </div>
       </section>
     </div>
-  )
+  );
 }

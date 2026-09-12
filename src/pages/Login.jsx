@@ -53,7 +53,7 @@ export default function Login() {
       {/* Visual side */}
       <div className="relative hidden overflow-hidden lg:block">
         <img
-          src="/images/pengurus-pusat-ikspi.webp"
+          src="images/pengurus-pusat-ikspi.webp"
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-90"
         />
