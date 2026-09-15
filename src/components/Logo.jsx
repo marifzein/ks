@@ -1,5 +1,8 @@
+import { getImg } from "../lib/utils";
+
 export function Emblem({ className = "h-10 w-auto" }) {
-  return <img src="images/lambang-ikspi.webp" alt="Lambang IKSPI Kera Sakti" className={className} />;
+  // return <img src="images/lambang-ikspi.webp" alt="Lambang IKSPI Kera Sakti" className={className} />;
+  return <img src={getImg("images/lambang-ikspi.webp")} alt="Lambang IKSPI Kera Sakti" className={className} />;
 }
 
 export default function Logo({ className = "", emblemClass = "h-11 w-auto", dark = false, to = "/" }) {

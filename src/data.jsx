@@ -6,15 +6,15 @@
 // resmi IKSPI Kera Sakti. Data resmi dapat menggantikan data
 // ini kapan pun tanpa mengubah struktur aplikasi.
 // ============================================================
-
+import { getImg } from "./lib/utils";
 export const DEMO_NOTICE = "Seluruh data pada prototype ini adalah DATA SIMULASI dan bukan data resmi organisasi.";
 
 export const orgStats = {
-  members: 324581,
+  members: 1378004,
   provinces: 34,
   branches: 421,
   rantings: 2843,
-  activeMembers: 287420,
+  activeMembers: 1287420,
   pending: 142,
   countries: 8,
 };
@@ -26,7 +26,7 @@ export const historicalTimeline = [
     era: "1980-an",
     title: "Awal Perjalanan ",
     description:
-      "Organisasi ini lahir dari semangat melestarikan ilmu bela diri serta membina generasi muda. Momentum awal perjalanan — nama, tempat, dan tokoh pendiri menunggu data resmi.",
+      "Organisasi ini lahir dari semangat melestarikan ilmu bela diri serta membina generasi muda. IKSPI Kera Sakti, didirikan pada 15 Januari 1980 di Madiun oleh Raden Totong Kiemdarto, awalnya bernama IKS Putra Indonesia (IKS PI). Totong, lahir pada 20 Oktober 1950, menggabungkan teknik kungfu utara dan selatan serta pencak silat, menciptakan jurus 'Kera Sakti' yang terkenal. \n\nPerguruan ini berkembang pesat, memiliki lebih dari 1 juta anggota di dalam dan luar negeri. Setelah Totong meninggal pada 24 Desember 1997, kepemimpinan dilanjutkan oleh Bambang Sunarja, yang memperkuat eksistensi dan pengembangan IKSPI Kera Sakti.\n\n Raden Totong Kiemdarto, lahir di Madiun pada 20 Oktober 1953, adalah pendiri Ikatan Keluarga Silat Putra Indonesia (IKSPI) Kera Sakti. Ia mendirikan perguruan ini pada 15 Januari 1980, setelah lama belajar berbagai aliran bela diri, termasuk kungfu dan pencak silat.\n\nTotong dikenal sebagai sosok sentral dalam pengembangan IKSPI, yang kini memiliki lebih dari satu juta anggota di seluruh dunia. Ia meninggal pada 24 Desember 1997, dan makamnya baru-baru ini dipindahkan ke Padepokan IKSPI Kera Sakti sebagai bentuk penghormatan.",
     tag: "Berawal dari sebuah tekad",
     dataNote: true,
   },
@@ -80,47 +80,50 @@ export const historicalTimeline = [
 // ---------------- TOKOH / FIGURES ----------------
 export const figures = [
   {
-    name: "[Nama Pendiri]",
-    role: "Pendiri Organisasi",
+    name: "Raden Totong Kiemdarto",
+    image: "images/pendiri-ikspi.webp",
+    role: "Guru Besar dan   Pendiri Organisasi",
     period: "",
-    description:
-      "Perintis yang menanamkan nilai persaudaraan, kedisiplinan, dan cinta budaya. Data resmi nama dan riwayat menunggu konfirmasi pengurus pusat.",
+    description: "Pendiri dan Guru Besar IKSPI yang menanamkan nilai persaudaraan, kedisiplinan, dan cinta budaya.",
     initials: "PS",
   },
   {
-    name: "[Nama Ketua Umum]",
-    role: "Ketua Umum — Masa Bakti [X]",
+    name: "K.R.A.T. Drs. H. Bambang Sunarja, M.A",
+    image: "images/ketua.jfif",
+    role: "Ketua Umum",
     period: "",
     description: "Pemimpin organisasi saat ini yang membawa arah penguatan struktur dan modernisasi organisasi.",
     initials: "KU",
   },
   {
-    name: "[Nama Sekretaris Jenderal]",
-    role: "Sekretaris Jenderal",
+    name: "Drs. Pandit Suryawan",
+    image: "images/pandit.jfif",
+    role: "Ketua Harian",
     period: "",
     description: "Penggerak administrasi, kaderisasi kepengurusan, dan tata kelola organisasi secara nasional.",
     initials: "SG",
   },
   {
-    name: "[Nama Pembina]",
-    role: "Ketua Dewan Pembina",
+    name: "Muriyadi, S.Pd",
+    role: "Sekretaris I",
     period: "",
-    description: "Sesepuh yang menjaga kemurnian nilai, filosofi, dan arah pembinaan organisasi dari masa ke masa.",
+    description:
+      "pimpinan kesekretariatan yang bertanggung jawab penuh atas manajemen administrasi dan komunikasi resmi organisasi.",
     initials: "PB",
   },
   {
-    name: "[Nama Pelatih Nasional]",
-    role: "Pelatih / Instruktur Nasional",
+    name: "Parji",
+    role: "Tim Advokasi",
     period: "",
     description:
-      "Tokoh yang membina para pelatih dan atlet di berbagai cabang, menjaga kualitas latihan di seluruh Indonesia.",
+      "Memberikan bantuan dan perlindungan hukum serta mengurus legalitas organisasi demi menjaga keselamatan warga dan nama baik",
     initials: "PL",
   },
   {
-    name: "[Nama Tokoh Muda]",
-    role: "Perwakilan Generasi Muda",
+    name: "Megah Rusiyanto",
+    role: "Bendahara I",
     period: "",
-    description: "Wajah generasi penerus yang aktif membawa organisasi ke dunia digital dan menjangkau anak muda.",
+    description: "Pengelola utama dan penanggung jawab tertinggi atas seluruh lalu lintas keuangan organisasi.",
     initials: "GM",
   },
 ];
@@ -167,55 +170,55 @@ export const activities = [
     title: "Latihan Rutin",
     category: "Pembinaan",
     description: "Latihan fisik, teknik, dan jurus secara terjadwal di seluruh cabang dan ranting.",
-    image: "/images/silat-indonesia.jpg",
+    image: getImg("/images/toya-golok.webp"),
   },
   {
     title: "Pembinaan Anggota",
     category: "Kaderisasi",
     description: "Pembinaan karakter dan keterampilan anggota secara berjenjang dari muda hingga dewasa.",
-    image: "/images/aktivitas-latihan.jpg",
+    image: getImg("/images/ketua-sah.webp"),
   },
   {
     title: "Ujian Kenaikan Tingkat",
     category: "Pembinaan",
     description: "Evaluasi dan pengakuan kemajuan anggota melalui ujian tingkat yang terstruktur.",
-    image: "/images/silat-air.jpg",
+    image: getImg("/images/ikspi-pantai.webp"),
   },
   {
     title: "Kegiatan Organisasi",
     category: "Organisasi",
     description: "Rapat kerja, musyawarah daerah, dan konsolidasi kepengurusan di semua tingkatan.",
-    image: "/images/silat-betawi.jpg",
+    image: getImg("/images/pengurus-bjn.webp"),
   },
   {
     title: "Kegiatan Sosial",
     category: "Kemasyarakatan",
     description: "Bakti sosial, donor darah, dan aksi kemanusiaan sebagai wujud pengabdian kepada masyarakat.",
-    image: "/images/silat-nusantara.jpg",
+    image: getImg("/images/donor-iks.webp"),
   },
   {
     title: "Kegiatan Budaya",
     category: "Budaya",
     description: "Pelestarian seni bela diri sebagai warisan budaya bangsa melalui pagelaran dan kolaborasi.",
-    image: "/images/silat-jabar.jpg",
+    image: getImg("/images/anak2-ikspi.webp"),
   },
   {
     title: "Kompetisi & Kejuaraan",
     category: "Prestasi",
     description: "Keikutsertaan dalam kejuaraan nasional maupun internasional sebagai pembuktian kualitas.",
-    image: "/images/silat-indonesia-2.jpg",
+    image: getImg("/images/pesilat-ikspi-juara.webp"),
   },
   {
     title: "Pendidikan Karakter",
     category: "Pembinaan",
     description: "Pembentukan mental, etika, dan kedisiplinan generasi muda melalui nilai-nilai luhur.",
-    image: "/images/silat-indonesia.jpg",
+    image: getImg("/images/loncat-ikspi.webp"),
   },
   {
     title: "Komunitas & Silaturahmi",
     category: "Kemasyarakatan",
     description: "Mempererat hubungan antaranggota dan masyarakat melalui kegiatan kebersamaan.",
-    image: "/images/aktivitas-latihan.jpg",
+    image: getImg("/images/ketua-ikspi-meresmikan.jpg"),
   },
 ];
 
@@ -228,7 +231,7 @@ export const events = [
     date: "2026-10-12",
     location: "Stadion Utama, Jakarta",
     description: "Latihan bersama anggota dari seluruh pengda se-Jabodetabek. Terbuka untuk seluruh jenjang.",
-    image: "/images/silat-indonesia.jpg",
+    image: getImg("/images/ikspi-pantai.webp"),
     status: "open",
   },
   {
@@ -238,7 +241,7 @@ export const events = [
     date: "2026-10-25",
     location: "Cabang Jawa Tengah",
     description: "Ujian kenaikan tingkat untuk anggota jenjang muda hingga utama di wilayah Jawa Tengah.",
-    image: "/images/silat-air.jpg",
+    image: getImg("/images/hero-anggota.webp"),
     status: "open",
   },
   {
@@ -248,7 +251,7 @@ export const events = [
     date: "2026-11-08",
     location: "GOR Surya Kencana, Bogor",
     description: "Kompetisi antar cabang memperebutkan piala Ketua Umum. Kategori tanding dan seni.",
-    image: "/images/silat-indonesia-2.jpg",
+    image: getImg("/images/pesilat-ikspi-juara.webp"),
     status: "open",
   },
   {
@@ -258,7 +261,7 @@ export const events = [
     date: "2026-11-21",
     location: "Serentak di 34 provinsi",
     description: "Aksi kemanusiaan serentak: donor darah, santunan, dan bakti sosial di seluruh Indonesia.",
-    image: "/images/silat-nusantara.jpg",
+    image: getImg("/images/donor-iks.webp"),
     status: "open",
   },
   {
@@ -268,7 +271,7 @@ export const events = [
     date: "2026-12-05",
     location: "Aula Pusat, Yogyakarta",
     description: "Diskusi tentang peran bela diri dalam pembentukan karakter generasi muda.",
-    image: "/images/silat-betawi.jpg",
+    image: getImg("/images/ketua-sah.webp"),
     status: "open",
   },
   {
@@ -278,7 +281,7 @@ export const events = [
     date: "2026-12-19",
     location: "Taman Budaya, Surabaya",
     description: "Pagelaran seni bela diri dan budaya kolaborasi dengan komunitas seni lokal.",
-    image: "/images/silat-jabar.jpg",
+    image: getImg("/images/jurus-bukit.webp"),
     status: "open",
   },
 ];
@@ -294,18 +297,18 @@ export const news = [
     featured: true,
     excerpt:
       "Organisasi mengambil langkah besar menuju era digital dengan menghadirkan ekosistem digital terpadu: identitas digital anggota, database organisasi, dan pusat informasi resmi.",
-    image: "/images/hero-anggota.png",
+    image: getImg("/images/qrcode-digital.webp"),
   },
   {
     id: "nws-002",
-    title: "324 Ribu Lebih Anggota Tersebar di Seluruh Indonesia ",
+    title: "1.324.078 Lebih Anggota Tersebar di Seluruh Indonesia ",
     category: "Organisasi",
     date: "2026-08-27",
     author: "Sekretariat",
     featured: false,
     excerpt:
       "Data simulasi menunjukkan besarnya ekosistem organisasi: ratusan cabang dan ribuan ranting dari Sabang sampai Merauke.",
-    image: "/images/silat-indonesia.jpg",
+    image: getImg("/images/ikspi-pantai.webp"),
   },
   {
     id: "nws-003",
@@ -316,7 +319,7 @@ export const news = [
     featured: false,
     excerpt:
       "Pendaftaran anggota baru gelombang ketiga dibuka secara online melalui portal IKSPI DIGITAL. Kuota terbatas.",
-    image: "/images/silat-air.jpg",
+    image: getImg("/images/toya-golok.webp"),
   },
   {
     id: "nws-004",
@@ -327,7 +330,7 @@ export const news = [
     featured: false,
     excerpt:
       "Atlet binaan mencatatkan prestasi membanggakan pada kejuaraan internasional. Detail resmi menunggu data resmi.",
-    image: "/images/silat-indonesia-2.jpg",
+    image: getImg("/images/atlet-ikspi.webp"),
   },
   {
     id: "nws-005",
@@ -337,7 +340,7 @@ export const news = [
     author: "Sekretariat",
     featured: false,
     excerpt: "Rapat Kerja Pimpinan membahas program kerja, penguatan cabang, dan transformasi digital organisasi.",
-    image: "/images/silat-betawi.jpg",
+    image: getImg("/images/pengurus-pusat-ikspi.webp"),
   },
   {
     id: "nws-006",
@@ -348,7 +351,7 @@ export const news = [
     featured: false,
     excerpt:
       "Jadwal ujian kenaikan tingkat untuk seluruh pengda telah diterbitkan dan dapat diakses melalui pusat informasi.",
-    image: "/images/silat-nusantara.jpg",
+    image: getImg("/images/silat-nusantara.webp"),
   },
   {
     id: "nws-007",
@@ -358,7 +361,7 @@ export const news = [
     author: "Bidang Sosial",
     featured: false,
     excerpt: "Kegiatan bakti sosial dan donor darah serentak menjadi wujud pengabdian organisasi kepada masyarakat.",
-    image: "/images/silat-jabar.jpg",
+    image: getImg("/images/donor-iks.webp"),
   },
   {
     id: "nws-008",
@@ -368,7 +371,7 @@ export const news = [
     author: "Bidang Pembinaan",
     featured: false,
     excerpt: "Pembinaan instruktur muda diharapkan memperkuat kualitas latihan di cabang dan ranting.",
-    image: "/images/aktivitas-latihan.jpg",
+    image: getImg("/images/rapat-iks.webp"),
   },
 ];
 
@@ -546,11 +549,14 @@ export const jenjangList = [
   "Pendekar Utama",
 ];
 
+const PHOTO = (img) => `https://i.pravatar.cc/300?img=${img}`;
+
 export const members = [
   {
     id: "mbr-001",
     nomor: "IKS.2021.01842",
     name: "Budi Santoso",
+    photo: PHOTO(12),
     gender: "L",
     province: "Jawa Timur",
     cabang: "Madiun",
@@ -567,6 +573,7 @@ export const members = [
     id: "mbr-002",
     nomor: "IKS.2019.00715",
     name: "Siti Rahmawati",
+    photo: PHOTO(47),
     gender: "P",
     province: "Jawa Barat",
     cabang: "Bandung",
@@ -583,6 +590,7 @@ export const members = [
     id: "mbr-003",
     nomor: "IKS.2015.00298",
     name: "Agus Wijaya",
+    photo: PHOTO(59),
     gender: "L",
     province: "DKI Jakarta",
     cabang: "Jakarta Pusat",
@@ -599,6 +607,7 @@ export const members = [
     id: "mbr-004",
     nomor: "IKS.2022.03117",
     name: "Dewi Lestari",
+    photo: PHOTO(44),
     gender: "P",
     province: "Jawa Tengah",
     cabang: "Semarang",
@@ -615,6 +624,7 @@ export const members = [
     id: "mbr-005",
     nomor: "IKS.2018.01122",
     name: "Rahmat Hidayat",
+    photo: PHOTO(68),
     gender: "L",
     province: "Sumatera Utara",
     cabang: "Medan",
@@ -631,6 +641,7 @@ export const members = [
     id: "mbr-006",
     nomor: "IKS.2020.02456",
     name: "Aisyah Nurjanah",
+    photo: PHOTO(32),
     gender: "P",
     province: "Banten",
     cabang: "Tangerang",
@@ -647,6 +658,7 @@ export const members = [
     id: "mbr-007",
     nomor: "IKS.2016.00487",
     name: "Yudi Pratama",
+    photo: PHOTO(15),
     gender: "L",
     province: "Sulawesi Selatan",
     cabang: "Makassar",
@@ -663,6 +675,7 @@ export const members = [
     id: "mbr-008",
     nomor: "IKS.2023.04021",
     name: "Fitri Handayani",
+    photo: PHOTO(16),
     gender: "P",
     province: "Bali",
     cabang: "Denpasar",
@@ -679,6 +692,7 @@ export const members = [
     id: "mbr-009",
     nomor: "IKS.2017.00893",
     name: "Hendra Gunawan",
+    photo: PHOTO(53),
     gender: "L",
     province: "Kalimantan Timur",
     cabang: "Samarinda",
@@ -695,6 +709,7 @@ export const members = [
     id: "mbr-010",
     nomor: "IKS.2014.00112",
     name: "Joko Susilo",
+    photo: PHOTO(52),
     gender: "L",
     province: "DI Yogyakarta",
     cabang: "Kota Yogyakarta",
@@ -711,6 +726,7 @@ export const members = [
     id: "mbr-011",
     nomor: "IKS.2024.04512",
     name: "Rina Marlina",
+    photo: PHOTO(9),
     gender: "P",
     province: "Jawa Barat",
     cabang: "Bogor",
@@ -727,6 +743,8 @@ export const members = [
     id: "mbr-012",
     nomor: "IKS.2019.01308",
     name: "Andi Saputra",
+    photo: PHOTO(8),
+
     gender: "L",
     province: "Riau",
     cabang: "Pekanbaru",
@@ -743,6 +761,7 @@ export const members = [
     id: "mbr-013",
     nomor: "IKS.2018.01477",
     name: "Nur Aini",
+    photo: PHOTO(23),
     gender: "P",
     province: "Lampung",
     cabang: "Bandar Lampung",
@@ -759,6 +778,7 @@ export const members = [
     id: "mbr-014",
     nomor: "IKS.2015.00634",
     name: "Slamet Riyadi",
+    photo: PHOTO(57),
     gender: "L",
     province: "Jawa Tengah",
     cabang: "Solo",
@@ -775,6 +795,7 @@ export const members = [
     id: "mbr-015",
     nomor: "IKS.2021.01933",
     name: "Maya Puspita",
+    photo: PHOTO(23),
     gender: "P",
     province: "Sumatera Barat",
     cabang: "Padang",
@@ -791,6 +812,7 @@ export const members = [
     id: "mbr-016",
     nomor: "IKS.2020.02890",
     name: "Fajar Nugroho",
+    photo: PHOTO(51),
     gender: "L",
     province: "Nusa Tenggara Barat",
     cabang: "Mataram",
@@ -807,6 +829,7 @@ export const members = [
     id: "mbr-017",
     nomor: "IKS.2016.00912",
     name: "Wawan Kurniawan",
+    photo: PHOTO(33),
     gender: "L",
     province: "Kalimantan Selatan",
     cabang: "Banjarmasin",
@@ -823,6 +846,7 @@ export const members = [
     id: "mbr-018",
     nomor: "IKS.2022.03544",
     name: "Intan Permata",
+    photo: PHOTO(48),
     gender: "P",
     province: "DKI Jakarta",
     cabang: "Jakarta Timur",
@@ -839,6 +863,7 @@ export const members = [
     id: "mbr-019",
     nomor: "IKS.2013.00087",
     name: "Hasan Basri",
+    photo: PHOTO(68),
     gender: "L",
     province: "Aceh",
     cabang: "Banda Aceh",
@@ -855,6 +880,7 @@ export const members = [
     id: "mbr-020",
     nomor: "IKS.2024.04871",
     name: "Putri Amelia",
+    photo: PHOTO(10),
     gender: "P",
     province: "Sulawesi Utara",
     cabang: "Manado",
@@ -1023,42 +1049,79 @@ export const organizationTree = {
 
 // ---------------- PERTUMBUHAN ANGGOTA (chart) ----------------
 export const growthData = [
-  { year: "2016", anggota: 96200 },
-  { year: "2017", anggota: 118500 },
-  { year: "2018", anggota: 141800 },
-  { year: "2019", anggota: 169300 },
-  { year: "2020", anggota: 195600 },
-  { year: "2021", anggota: 224900 },
-  { year: "2022", anggota: 254700 },
-  { year: "2023", anggota: 281300 },
-  { year: "2024", anggota: 302800 },
-  { year: "2025", anggota: 316400 },
-  { year: "2026", anggota: 324581 },
+  { year: "2016", anggota: 408415 },
+  { year: "2017", anggota: 503089 },
+  { year: "2018", anggota: 602008 },
+  { year: "2019", anggota: 718759 },
+  { year: "2020", anggota: 830415 },
+  { year: "2021", anggota: 954807 },
+  { year: "2022", anggota: 1081322 },
+  { year: "2023", anggota: 1194252 },
+  { year: "2024", anggota: 1285529 },
+  { year: "2025", anggota: 1343268 },
+  { year: "2026", anggota: 1378000 },
 ];
 
 export const jenjangDistribution = [
-  { name: "Anggota Muda", value: 118200 },
-  { name: "Anggota Madya", value: 96400 },
-  { name: "Anggota Utama", value: 62400 },
-  { name: "Pendekar Muda", value: 31200 },
-  { name: "Pendekar Madya", value: 12100 },
-  { name: "Pendekar Utama", value: 4281 },
+  { name: "Anggota Muda", value: 501815 },
+  { name: "Anggota Madya", value: 409264 },
+  { name: "Anggota Utama", value: 264918 },
+  { name: "Pendekar Muda", value: 132459 },
+  { name: "Pendekar Madya", value: 51370 },
+  { name: "Pendekar Utama", value: 18174 },
 ];
 
 export const statusDistribution = [
-  { name: "Aktif", value: 287420 },
-  { name: "Non-Aktif", value: 35019 },
-  { name: "Menunggu Verifikasi", value: 2142 },
+  { name: "Aktif", value: 1220234 },
+  { name: "Non-Aktif", value: 148672 },
+  { name: "Menunggu Verifikasi", value: 9094 },
 ];
 
 export const regionDistribution = [
-  { name: "Jawa", value: 173700 },
-  { name: "Sumatera", value: 78900 },
-  { name: "Sulawesi", value: 28000 },
-  { name: "Kalimantan", value: 23000 },
-  { name: "Bali & Nusa Tenggara", value: 16600 },
-  { name: "Maluku & Papua", value: 4381 },
+  { name: "Jawa", value: 737439 },
+  { name: "Sumatera", value: 334968 },
+  { name: "Sulawesi", value: 118873 },
+  { name: "Kalimantan", value: 97646 },
+  { name: "Bali & Nusa Tenggara", value: 70475 },
+  { name: "Maluku & Papua", value: 18599 },
 ];
+// export const growthData = [
+//   { year: "2016", anggota: 96200 },
+//   { year: "2017", anggota: 118500 },
+//   { year: "2018", anggota: 141800 },
+//   { year: "2019", anggota: 169300 },
+//   { year: "2020", anggota: 195600 },
+//   { year: "2021", anggota: 224900 },
+//   { year: "2022", anggota: 254700 },
+//   { year: "2023", anggota: 281300 },
+//   { year: "2024", anggota: 302800 },
+//   { year: "2025", anggota: 316400 },
+//   { year: "2026", anggota: 324581 },
+// ];
+
+// export const jenjangDistribution = [
+//   { name: "Anggota Muda", value: 118200 },
+//   { name: "Anggota Madya", value: 96400 },
+//   { name: "Anggota Utama", value: 62400 },
+//   { name: "Pendekar Muda", value: 31200 },
+//   { name: "Pendekar Madya", value: 12100 },
+//   { name: "Pendekar Utama", value: 4281 },
+// ];
+
+// export const statusDistribution = [
+//   { name: "Aktif", value: 287420 },
+//   { name: "Non-Aktif", value: 35019 },
+//   { name: "Menunggu Verifikasi", value: 2142 },
+// ];
+
+// export const regionDistribution = [
+//   { name: "Jawa", value: 173700 },
+//   { name: "Sumatera", value: 78900 },
+//   { name: "Sulawesi", value: 28000 },
+//   { name: "Kalimantan", value: 23000 },
+//   { name: "Bali & Nusa Tenggara", value: 16600 },
+//   { name: "Maluku & Papua", value: 4381 },
+// ];
 
 // ---------------- ACTIVITY FEED ----------------
 export const activityFeed = [
@@ -1142,7 +1205,7 @@ export const agenda = [
 
 // ---------------- MARQUEE ----------------
 export const tickerItems = [
-  "324.581 Anggota",
+  "1.378.000 Anggota",
   "34 Provinsi",
   "421 Cabang",
   "2.843 Ranting",

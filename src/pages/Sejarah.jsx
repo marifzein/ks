@@ -11,14 +11,19 @@ export default function Sejarah() {
     <div>
       <section className="relative overflow-hidden bg-ink pb-24 pt-40">
         <div className="absolute inset-0">
-          <img src="images/silat-air.jpg" alt="Sejarah IKSPI" className="h-full w-full object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" />
+          <img
+            src={`${import.meta.env.BASE_URL}images/pengurus-pusat-ikspi.webp`}
+            alt="Sejarah IKSPI"
+            className="h-full w-full object-cover object-[center_75%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-black/30 to-ink" />
+          {/* <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" /> */}
         </div>
         <div className="container-ik relative">
           <ScrollReveal>
             <p className="eyebrow text-gold">Sejarah</p>
             <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl">
-              Perjalanan yang Dibangun <span className="text-primary">Generasi ke Generasi</span>
+              Perjalanan <br></br>yang Dibangun<br></br> <span className="text-primary">Generasi ke Generasi</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
               Dari awal perjalanan hingga menjadi keluarga besar di seluruh Indonesia — sebuah perjalanan panjang yang

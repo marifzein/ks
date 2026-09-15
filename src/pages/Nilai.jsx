@@ -18,8 +18,13 @@ export default function Nilai() {
     <div>
       <section className="relative overflow-hidden bg-ink pb-24 pt-40">
         <div className="absolute inset-0">
-          <img src="images/silat-jabar.jpg" alt="Nilai IKSPI" className="h-full w-full object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" />
+          <img
+            src="images/loncat-ikspi.webp"
+            alt="Nilai IKSPI"
+            // className="h-full w-full object-cover object-top object-[center_0%] opacity-35"
+            className="h-full w-full object-cover object-[center_20%] opacity-35"
+          />
+          {/* <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" /> */}
         </div>
         <div className="container-ik relative">
           <ScrollReveal>
@@ -92,8 +97,8 @@ export default function Nilai() {
       {/* CTA */}
       <section className="bg-ink py-20">
         <div className="container-ik flex flex-col items-center gap-6 text-center">
-          <h2 className="max-w-2xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Nilai tidak cukup dibaca — ia harus dilatih.
+          <h2 className="max-w-2xl text-3xl font-extrabold tracking-tight text-white sm:text-2xl">
+            Nilai tidak cukup dibaca - Ia harus dilatih.
           </h2>
           <Button to="/registrasi" size="lg">
             Mulai Berlatih Bersama Kami <ArrowRight className="h-4 w-4" />

@@ -53,9 +53,9 @@ export default function Sebaran() {
       <section className="relative overflow-hidden bg-ink pb-24 pt-40">
         <div className="absolute inset-0">
           <img
-            src="images/silat-indonesia-2.jpg"
+            src={`${import.meta.env.BASE_URL}images/latber.webp`}
             alt="Sebaran IKSPI"
-            className="h-full w-full object-cover opacity-25"
+            className="h-full w-full object-cover "
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" />
         </div>
@@ -189,7 +189,14 @@ export default function Sebaran() {
         <div className="container-ik">
           <SectionHeader
             eyebrow="Organization Explorer"
-            title="Struktur: Pusat → Pengda → Cabang → Ranting"
+            // title="Struktur: Pusat → Pengda → Cabang → Ranting"
+            title={
+              <>
+                :. Struktur .:
+                <br />
+                <span className="text-lg sm:text-2xl font-semibold opacity-80">Pusat → Pengda → Cabang → Ranting</span>
+              </>
+            }
             description="Jelajahi hierarki organisasi secara interaktif. Struktur ini adalah DATA SIMULASI."
             light
           />

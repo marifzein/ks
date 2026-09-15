@@ -23,7 +23,12 @@ export default function Timeline({ items }) {
                     <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">{item.era}</span>
                     <h3 className="mt-2 text-xl font-extrabold tracking-tight text-ink">{item.year}</h3>
                     <p className="mt-1 text-sm font-bold text-primary">{item.title}</p>
-                    <p className="mt-3 text-sm leading-relaxed text-ink/60">{item.description}</p>
+
+                    {/* Tambahkan whitespace-pre-line di bawah ini */}
+                    <p className="mt-3 text-sm leading-relaxed text-ink/60 whitespace-pre-line">{item.description}</p>
+
+                    {/* <p className="mt-3 text-sm leading-relaxed text-ink/60">{item.description}</p> */}
+
                     <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-ink/[0.04] px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-ink/50">
                       {item.tag}
                     </div>

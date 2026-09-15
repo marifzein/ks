@@ -27,7 +27,11 @@ export default function Berita() {
     <div>
       <section className="relative overflow-hidden bg-ink pb-24 pt-40">
         <div className="absolute inset-0">
-          <img src="images/hero-anggota.png" alt="Berita IKSPI" className="h-full w-full object-cover opacity-25" />
+          <img
+            src={`${import.meta.env.BASE_URL}images/anak2-ikspi.webp`}
+            alt="Berita IKSPI"
+            className="h-full w-full object-cover "
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-ink" />
         </div>
         <div className="container-ik relative">

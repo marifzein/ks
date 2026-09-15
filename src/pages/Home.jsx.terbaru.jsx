@@ -43,7 +43,7 @@ export default function Home() {
       <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-black pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="images/hero-anggota.png"
+            src="images/hero-anggota.webp"
             alt="Anggota IKSPI Kera Sakti"
             className="h-full w-full object-cover object-[center_20%] opacity-40 grayscale contrast-125"
           />
@@ -136,7 +136,7 @@ export default function Home() {
           <ScrollReveal>
             <div className="relative border border-white/10 bg-black p-2">
               <img
-                src="images/aktivitas-latihan.jpg"
+                src="images/aktivitas-latihan.webp"
                 alt="Latihan IKSPI"
                 className="aspect-[4/3] w-full object-cover filter grayscale contrast-125 hover:grayscale-0 transition duration-500"
               />

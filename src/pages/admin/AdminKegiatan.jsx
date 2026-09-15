@@ -1,26 +1,26 @@
-import { useState } from 'react'
-import { CalendarDays, Plus, Trash2 } from 'lucide-react'
-import { useApp } from '../../context/AppContext'
-import { useToast } from '../../context/ToastContext'
-import Badge from '../../components/Badge'
-import { fmtDate } from '../../lib/utils'
+import { useState } from "react";
+import { CalendarDays, Plus, Trash2 } from "lucide-react";
+import { useApp } from "../../context/AppContext";
+import { useToast } from "../../context/ToastContext";
+import Badge from "../../components/Badge";
+import { fmtDate } from "../../lib/utils";
 
-const empty = { title: '', category: 'Latihan Bersama', date: '2026-12-01', location: '', description: '' }
+const empty = { title: "", category: "Latihan Bersama", date: "2026-12-01", location: "", description: "" };
 
 export default function AdminKegiatan() {
-  const { events, addEvent, deleteEvent } = useApp()
-  const toast = useToast()
-  const [form, setForm] = useState(empty)
-  const [showForm, setShowForm] = useState(false)
+  const { events, addEvent, deleteEvent } = useApp();
+  const toast = useToast();
+  const [form, setForm] = useState(empty);
+  const [showForm, setShowForm] = useState(false);
 
   const submit = (e) => {
-    e.preventDefault()
-    if (!form.title || !form.date) return
-    addEvent({ ...form, image: '/images/silat-nusantara.jpg', status: 'open' })
-    toast.success(`Kegiatan "${form.title}" diterbitkan.`)
-    setForm(empty)
-    setShowForm(false)
-  }
+    e.preventDefault();
+    if (!form.title || !form.date) return;
+    addEvent({ ...form, image: getImg("images/silat-nusantara.webp"), status: "open" });
+    toast.success(`Kegiatan "${form.title}" diterbitkan.`);
+    setForm(empty);
+    setShowForm(false);
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -39,29 +39,65 @@ export default function AdminKegiatan() {
         <form onSubmit={submit} className="card-ik grid animate-fadeUp gap-4 p-6 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <label className="label-ik">Judul Kegiatan</label>
-            <input className="input-ik" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Judul kegiatan…" required />
+            <input
+              className="input-ik"
+              value={form.title}
+              onChange={(e) => setForm({ ...form, title: e.target.value })}
+              placeholder="Judul kegiatan…"
+              required
+            />
           </div>
           <div>
             <label className="label-ik">Kategori</label>
-            <select className="input-ik" value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}>
-              {['Latihan Bersama', 'Ujian', 'Kejuaraan', 'Sosial', 'Seminar', 'Budaya'].map((c) => <option key={c}>{c}</option>)}
+            <select
+              className="input-ik"
+              value={form.category}
+              onChange={(e) => setForm({ ...form, category: e.target.value })}
+            >
+              {["Latihan Bersama", "Ujian", "Kejuaraan", "Sosial", "Seminar", "Budaya"].map((c) => (
+                <option key={c}>{c}</option>
+              ))}
             </select>
           </div>
           <div>
             <label className="label-ik">Tanggal</label>
-            <input type="date" className="input-ik" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} required />
+            <input
+              type="date"
+              className="input-ik"
+              value={form.date}
+              onChange={(e) => setForm({ ...form, date: e.target.value })}
+              required
+            />
           </div>
           <div className="sm:col-span-2">
             <label className="label-ik">Lokasi</label>
-            <input className="input-ik" value={form.location} onChange={(e) => setForm({ ...form, location: e.target.value })} placeholder="Kota / tempat" />
+            <input
+              className="input-ik"
+              value={form.location}
+              onChange={(e) => setForm({ ...form, location: e.target.value })}
+              placeholder="Kota / tempat"
+            />
           </div>
           <div className="sm:col-span-2">
             <label className="label-ik">Deskripsi</label>
-            <textarea className="input-ik min-h-[90px]" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Deskripsi singkat…" />
+            <textarea
+              className="input-ik min-h-[90px]"
+              value={form.description}
+              onChange={(e) => setForm({ ...form, description: e.target.value })}
+              placeholder="Deskripsi singkat…"
+            />
           </div>
           <div className="flex gap-3 sm:col-span-2">
-            <button type="submit" className="btn-base bg-primary text-white hover:bg-primary-dark">Terbitkan</button>
-            <button type="button" onClick={() => setShowForm(false)} className="btn-base bg-ink/[0.06] text-ink hover:bg-ink/10">Batal</button>
+            <button type="submit" className="btn-base bg-primary text-white hover:bg-primary-dark">
+              Terbitkan
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowForm(false)}
+              className="btn-base bg-ink/[0.06] text-ink hover:bg-ink/10"
+            >
+              Batal
+            </button>
           </div>
         </form>
       )}
@@ -71,19 +107,28 @@ export default function AdminKegiatan() {
           <div key={e.id} className="card-ik group p-6 transition-all hover:shadow-lift">
             <div className="flex items-start justify-between gap-3">
               <Badge tone="red">{e.category}</Badge>
-              <button onClick={() => { deleteEvent(e.id); toast.info('Kegiatan dihapus.', 'info') }} className="text-ink/25 transition hover:text-primary" aria-label="Hapus">
+              <button
+                onClick={() => {
+                  deleteEvent(e.id);
+                  toast.info("Kegiatan dihapus.", "info");
+                }}
+                className="text-ink/25 transition hover:text-primary"
+                aria-label="Hapus"
+              >
                 <Trash2 className="h-4 w-4" />
               </button>
             </div>
             <h3 className="mt-3 text-base font-extrabold leading-snug text-ink">{e.title}</h3>
             <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-ink/50">{e.description}</p>
             <div className="mt-4 flex flex-col gap-1 border-t border-ink/[0.06] pt-3 text-xs font-semibold text-ink/45">
-              <span className="flex items-center gap-1.5"><CalendarDays className="h-3.5 w-3.5 text-primary" /> {fmtDate(e.date)}</span>
+              <span className="flex items-center gap-1.5">
+                <CalendarDays className="h-3.5 w-3.5 text-primary" /> {fmtDate(e.date)}
+              </span>
               <span>{e.location}</span>
             </div>
           </div>
         ))}
       </div>
     </div>
-  )
+  );
 }
